@@ -2,10 +2,10 @@ return {
   'nvim-lualine/lualine.nvim',
   opts = {
     options = {
-      --   icons_enabled = true,
+      icons_enabled = vim.g.have_nerd_font,
       theme = 'catppuccin',
-      --   component_separators = { left = '', right = ''},
-      --   section_separators = { left = '', right = ''},
+        component_separators = vim.g.have_nerd_font and { left = '', right = ''} or { left = '', right = '' },
+        section_separators =   vim.g.have_nerd_font and { left = '', right = ''} or { left = '', right = '' },
       --   disabled_filetypes = {
       --     statusline = {},
       --     winbar = {},
