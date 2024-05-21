@@ -11,6 +11,6 @@ require('lazy').setup( { import = 'plugins' }, {
 EOF
 
 " Further configuration in:
-" $XDG_CONFIG_HOME/nvim/after/plugin
-" $XDG_CONFIG_HOME/nvim/after/ftplugin
-" $XDG_CONFIG_HOME/nvim/lua/plugins
+" ~/.config/nvim/after/plugin
+" ~/.config/nvim/after/ftplugin
+" ~/.config/nvim/lua/plugins
