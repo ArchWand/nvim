@@ -10,7 +10,7 @@ return {
     -- disable_in_macro = true, -- disable when recording or executing a macro
     -- disable_in_visualblock = false, -- disable when insert after visual block mode
     -- disable_in_replace_mode = true,
-    ignored_next_char = [=[[%S]]=],
+    ignored_next_char = [=[[%w%s%%%'%[%"%.%`%$]]=],
     -- enable_moveright = true,
     -- enable_afterquote = true, -- add bracket pairs after quote
     enable_check_bracket_line = false, -- Don't add pairs if it already has a close pair in the same line
@@ -51,6 +51,35 @@ return {
     npairs.add_rules(require('nvim-autopairs.rules.endwise-elixir'))
     npairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
     npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))
+
+    npairs.add_rules({
+      Rule("$", "$",{"tex", "latex"})
+        -- don't add a pair if the next character is %
+        :with_pair(cond.not_after_regex("%%"))
+        -- don't add a pair if  the previous character is xxx
+        :with_pair(cond.not_before_regex("xxx", 3))
+        -- don't move right when repeat character
+        :with_move(cond.none())
+        -- don't delete if the next character is xx
+        :with_del(cond.not_after_regex("xx"))
+        -- disable adding a newline when you press <cr>
+        :with_cr(cond.none())
+    },
+      -- disable for .vim files, but it work for another filetypes
+      Rule("a","a","-vim")
+    )
+
+    npairs.add_rules({
+      Rule("$$","$$","tex")
+        :with_pair(function(opts)
+          print(vim.inspect(opts))
+          if opts.line=="aa $$" then
+            -- don't add pair on that line
+            return false
+          end
+        end)
+    }
+    )
 
     local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
     npairs.add_rules {
