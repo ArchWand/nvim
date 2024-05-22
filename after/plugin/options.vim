@@ -31,7 +31,7 @@ set showbreak=\ >\
 set textwidth=80
 
 " Behavior
-set ignorecase smartcase
+" set ignorecase smartcase
 " set nohlsearch
 set splitright splitbelow
 set formatoptions=qwnj
