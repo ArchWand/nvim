@@ -38,6 +38,11 @@ function GoEoL()
   if vim.fn.col '.' == pos then
     vim.cmd 'normal! $'
   end
+  if vim.fn.col('.') == #vim.fn.getline('.') then
+    local curpos = vim.fn.getpos('.')
+    curpos[5] = vim.v.maxcol -- Set curswant
+    vim.fn.setpos('.', curpos)
+  end
 end
 
 -- Get a single character and insert it in the right spot
@@ -63,4 +68,11 @@ function SearchCount()
     return search_stat
   end
   return '[?/?]'
+end
+
+-- Print out a table in lua
+function Print(t)
+  for k, v in pairs(t) do
+    print(k, v)
+  end
 end
