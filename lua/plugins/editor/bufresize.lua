@@ -1,0 +1,3 @@
+return {
+  'kwkarlwang/bufresize.nvim',
+}

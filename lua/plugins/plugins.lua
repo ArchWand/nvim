@@ -9,6 +9,7 @@ return {
 
   require 'plugins.editor.autopairs',
   require 'plugins.editor.bullets',
+  require 'plugins.editor.bufresize',
   require 'plugins.editor.comment',
   require 'plugins.editor.harpoon',
   require 'plugins.editor.mini',
