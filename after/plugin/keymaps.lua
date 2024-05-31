@@ -111,6 +111,9 @@ map('v', '>', '>gv',                                                           '
 map('n', 'n', 'n<Cmd>lua print(SearchCount())<CR>')
 map('n', 'N', 'N<Cmd>lua print(SearchCount())<CR>')
 
+-- make ' jump horizontally not just vertically
+map('n', "'", '`')
+
 -- [[ Editor ]] ===============================================================
 -- Common shortcuts -----------------------------------------------------------
 -- Save
