@@ -9,6 +9,7 @@ return {
 
   require 'plugins.editor.autopairs',
   require 'plugins.editor.comment',
+  require 'plugins.editor.harpoon',
   require 'plugins.editor.mini',
   require 'plugins.editor.persistence',
   require 'plugins.editor.telescope',

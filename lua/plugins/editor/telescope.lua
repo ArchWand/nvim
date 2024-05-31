@@ -56,7 +56,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     map('n', '<leader>fg', builtin.live_grep,                         { desc = 'Search in files'       })
     map('n', '<leader>fb', builtin.buffers,                           { desc = 'Search buffers'        })
     map('n', '<leader>f.', builtin.oldfiles,                          { desc = 'Search recent files'   })
-    map('n', '<leader>fh', builtin.help_tags,                         { desc = 'Search help'           })
+    map('n', '<f1>',       builtin.help_tags,                         { desc = 'Search help'           })
     map('n', '<leader>f/', builtin.current_buffer_fuzzy_find,         { desc = 'Search current buffer' })
     map('n', '<leader>fp', builtin.builtin,                           { desc = 'Select picker'         })
 
