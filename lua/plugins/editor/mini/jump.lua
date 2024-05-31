@@ -12,7 +12,7 @@ return {
   -- a very big number (like 10^7) to virtually disable.
   delay = {
     -- Delay between jump and highlighting all possible jumps
-    highlight = 1000,
+    highlight = 10000000,
 
     -- Delay between jump and automatic stop if idle (no jump is done)
     idle_stop = 10000000,
