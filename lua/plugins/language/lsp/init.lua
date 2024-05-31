@@ -45,7 +45,7 @@ return { -- LSP Configuration & Plugins
         map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')
         map('gD',         vim.lsp.buf.declaration,                             '[G]oto [D]eclaration')
 
-        -- Diagnostic mappings 
+        -- Diagnostic mappings
         -- Managed by mini.bracketed
         -- map('[d',     vim.diagnostic.goto_prev,                                'Go to previous [D]iagnostic message')
         -- map(']d',     vim.diagnostic.goto_next,                                'Go to next [D]iagnostic message')
@@ -61,6 +61,11 @@ return { -- LSP Configuration & Plugins
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
           end, 'Toggle Inlay [H]ints')
         end
+
+        -- Enable/Disable LSP
+        map('<leader>le', vim.cmd.LspStart,                                    'Enable LSP')
+        map('<leader>ld', vim.cmd.LspStop,                                     'Disable LSP')
+
       end,
     })
 
