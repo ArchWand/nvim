@@ -25,6 +25,7 @@ return { -- Show pending keybinds
         d = { name = 'Debug',     _ = 'which_key_ignore' },
         f = { name = 'Telescope', _ = 'which_key_ignore' },
         g = { name = 'Git',       _ = 'which_key_ignore' },
+        h = { name = 'Harpoon',   _ = 'which_key_ignore' },
         l = { name = 'LSP',       _ = 'which_key_ignore' },
         q = { name = 'Session',   _ = 'which_key_ignore' },
         r = { name = 'Rename',    _ = 'which_key_ignore' },

@@ -7,12 +7,16 @@ return {
     harpoon:setup({})
 
     local map = vim.keymap.set
-    map('n', '<leader>ha', function() harpoon:list():add() end)
-    map('n', '<leader>h<CR>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-    -- Toggle previous & next buffers stored within Harpoon list
-    map('n', '<leader>hn', function() harpoon:list():prev() end)
-    map('n', '<leader>hp', function() harpoon:list():next() end)
+    map('n', '<leader>h<CR>', function()
+      harpoon.ui:toggle_quick_menu(harpoon:list())
+    end, { desc = 'Toggle harpoon' })
+    map('n', '<leader>ha', function() harpoon:list():add() end,       { desc = 'Add to harpoon' })
+    map('n', '<leader>h1', function() harpoon:list():select(1) end,   { desc = 'Select 1st' })
+    map('n', '<leader>h2', function() harpoon:list():select(2) end,   { desc = 'Select 2nd' })
+    map('n', '<leader>h3', function() harpoon:list():select(3) end,   { desc = 'Select 3rd' })
+    map('n', '<leader>h4', function() harpoon:list():select(4) end,   { desc = 'Select 4th' })
+    map('n', '<leader>hn', function() harpoon:list():prev() end,      { desc = 'Switch to next' })
+    map('n', '<leader>hp', function() harpoon:list():next() end,      { desc = 'Switch to prev' })
 
     -- basic telescope configuration
     local conf = require('telescope.config').values
