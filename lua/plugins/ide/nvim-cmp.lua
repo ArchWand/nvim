@@ -3,7 +3,7 @@ return { -- Autocompletion
   event = 'InsertEnter',
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
-    require 'plugins.language.autocompletion.LuaSnip',
+    'L4MON4D3/LuaSnip',
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds other completion capabilities.

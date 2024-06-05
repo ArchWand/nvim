@@ -7,11 +7,11 @@ return { -- LSP Configuration & Plugins
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
-    require 'plugins.language.lsp.fidget',
+    require 'plugins.ide.lsp.fidget',
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    require 'plugins.language.lsp.neodev',
+    require 'plugins.ide.lsp.neodev',
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.

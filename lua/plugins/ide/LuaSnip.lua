@@ -11,6 +11,9 @@ return { -- Snippet Engine & its associated nvim-cmp source
   end)(),
   config = function()
     require('luasnip.loaders.from_snipmate').load({ path = { './snippets' } })
+    function HiThere()
+      vim.notify("hi")
+    end
   end,
   dependencies = {
     -- `friendly-snippets` contains a variety of premade snippets.

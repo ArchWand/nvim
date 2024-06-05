@@ -23,12 +23,13 @@ return {
   require 'plugins.external.gitsigns',
   require 'plugins.external.oil',
 
-  require 'plugins.language.autocompletion',
-  require 'plugins.language.conform',
-  require 'plugins.language.dap',
-  require 'plugins.language.linter',
-  require 'plugins.language.lsp',
-  require 'plugins.language.treesitter',
-  require 'plugins.language.trouble',
+  require 'plugins.ide.conform',
+  require 'plugins.ide.dap',
+  require 'plugins.ide.linter',
+  require 'plugins.ide.lsp',
+  require 'plugins.ide.LuaSnip',
+  require 'plugins.ide.nvim-cmp',
+  require 'plugins.ide.treesitter',
+  require 'plugins.ide.trouble',
 
 }
