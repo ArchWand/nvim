@@ -125,7 +125,7 @@ map('n',   '<C-A-s>', '<Cmd>wa<CR>',                                           '
 map('i',   '<C-A-s>', '<Esc>:wa<CR>',                                          'Save all buffers')
 -- Select all (not set in normal or visual mode because <C-a> is useful)
 map('i', '<C-a>', '<Esc>gggH<C-o>G',                                           'Select entire buffer')
-map('o', '<C-a>', 'Gugg.',                                                     'Select entire buffer')
+map('o', '<C-a>', '<Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>',                'Select entire buffer')
 -- Shift to select
 map('i', '<S-Down>',  '<C-o>gh<Down>', { remap = true },                       'Down')
 map('i', '<S-Up>',    '<C-o>gh<Up>', { remap = true },                         'Up')
