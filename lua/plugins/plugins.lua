@@ -7,7 +7,7 @@ return {
   -- require 'plugins.display.todo-comments',
   require 'plugins.display.which-key',
 
-  require 'plugins.editor.autopairs',
+  -- require 'plugins.editor.autopairs',
   require 'plugins.editor.bullets',
   require 'plugins.editor.bufresize',
   require 'plugins.editor.comment',
