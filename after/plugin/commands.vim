@@ -15,3 +15,5 @@ au TextYankPost * silent! lua vim.highlight.on_yank {timeout=150}
 " Configure termianl buffers
 au TermOpen * setlocal nonumber norelativenumber scrolloff=0
 
+au BufEnter * set formatoptions=c/qnj
+

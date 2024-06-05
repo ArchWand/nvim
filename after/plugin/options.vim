@@ -34,5 +34,5 @@ set textwidth=80
 set ignorecase smartcase
 " set nohlsearch
 set splitright splitbelow
-set formatoptions=qwnj
+set formatoptions=c/qnj
 
