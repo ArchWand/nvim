@@ -1,5 +1,23 @@
 return {
   'mrjones2014/smart-splits.nvim',
+  config = function(_, opts)
+    local smartsplits = require('smart-splits')
+    smartsplits.setup(opts)
+
+    local map = vim.keymap.set
+
+    map('n', '<C-A-S-h>', smartsplits.resize_left)
+    map('n', '<C-A-S-j>', smartsplits.resize_down)
+    map('n', '<C-A-S-k>', smartsplits.resize_up)
+    map('n', '<C-A-S-l>', smartsplits.resize_right)
+
+    map('n', '<C-A-h>', smartsplits.move_cursor_left)
+    map('n', '<C-A-j>', smartsplits.move_cursor_down)
+    map('n', '<C-A-k>', smartsplits.move_cursor_up)
+    map('n', '<C-A-l>', smartsplits.move_cursor_right)
+
+    map('n', '<A-i>', smartsplits.move_cursor_previous)
+  end,
   opts = {
     -- -- Ignored buffer types (only while resizing)
     -- ignored_buftypes = {

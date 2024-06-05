@@ -26,15 +26,17 @@ map('i', '<Down>', '<C-o>gj',                                                  '
 map('i', '<Up>',   '<C-o>gk',                                                  'Up')
 
 -- Manage windows -------------------------------------------------------------
-map('ni', '<C-A-h>', '<C-w><C-h>',                                              'Switch window LEFT')
-map('ni', '<C-A-j>', '<C-w><C-j>',                                              'Switch window DOWN')
-map('ni', '<C-A-k>', '<C-w><C-k>',                                              'Switch window UP')
-map('ni', '<C-A-l>', '<C-w><C-l>',                                              'Switch window RIGHT')
-map('ni', '<A-i>', '<C-w>p',                                                    'Switch to most recent window')
-map('ni', '<A-,>', '<C-w><',                                                    'Increase split width')
-map('ni', '<A-.>', '<C-w>>',                                                    'Decrease split width')
-map('ni', '<A-u>', '<C-w>+',                                                    'Increase split height')
-map('ni', '<A-d>', '<C-w>-',                                                    'Decrease split height')
+-- Partially managed by smart-splits
+-- map('ni', '<C-A-h>', '<C-w><C-h>',                                             'Switch window LEFT')
+-- map('ni', '<C-A-j>', '<C-w><C-j>',                                             'Switch window DOWN')
+-- map('ni', '<C-A-k>', '<C-w><C-k>',                                             'Switch window UP')
+-- map('ni', '<C-A-l>', '<C-w><C-l>',                                             'Switch window RIGHT')
+-- map('n', '<A-i>', '<C-w>p',                                                    'Switch to most recent window')
+map('i', '<A-i>', '<Cmd>wincmd p<Cmd>',                                        'Switch to most recent window')
+-- map('ni', '<C-A-S-h>', '<C-w><',                                               'Increase split width')
+-- map('ni', '<C-A-S-j>', '<C-w>+',                                               'Increase split height')
+-- map('ni', '<C-A-S-k>', '<C-w>-',                                               'Decrease split height')
+-- map('ni', '<C-A-S-l>', '<C-w>>',                                               'Decrease split width')
 
 -- Buffers --------------------------------------------------------------------
 -- Managed by mini.bracketed
