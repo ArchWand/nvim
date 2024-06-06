@@ -119,12 +119,11 @@ map('n', "'", '`')
 -- [[ Editor ]] ===============================================================
 -- Common shortcuts -----------------------------------------------------------
 -- Save
-map('n',   '<C-s>',   '<Cmd>update<CR>',                                       'Save to file')
-map('i',   '<C-s>',   '<Esc>:update<CR>',                                      'Save to file')
-map('n',   '<C-A-s>', '<Cmd>wa<CR>',                                           'Save all buffers')
-map('i',   '<C-A-s>', '<Esc>:wa<CR>',                                          'Save all buffers')
+map('n',  '<C-s>',   '<Cmd>update<CR>',                                        'Save to file')
+map('i',  '<C-s>',   '<Esc>:update<CR>',                                       'Save to file then exit insert mode')
+map('ni', '<C-A-s>', '<Cmd>wa<CR>',                                            'Save all buffers')
 -- Select all (not set in normal or visual mode because <C-a> is useful)
-map('i', '<C-a>', '<Esc>gggH<C-o>G',                                           'Select entire buffer')
+map('i', '<C-a>', '<Esc>gggH<C-End>',                                          'Select entire buffer')
 map('o', '<C-a>', '<Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>',                'Select entire buffer')
 -- Shift to select
 map('i', '<S-Down>',  '<C-o>gh<Down>', { remap = true },                       'Down')
@@ -133,8 +132,8 @@ map('i', '<S-Left>',  '<Left><C-o>gh',                                         '
 map('i', '<S-Right>', '<C-o>gh',                                               'Right')
 map('s', '<S-Down>',  '<Down>', { remap = true },                              'Down')
 map('s', '<S-Up>',    '<Up>', { remap = true },                                'Up')
-map('s', '<S-Left>',  '<C-o><BS>',                                             'Left')
-map('s', '<S-Right>', '<C-o><Space>',                                          'Right')
+map('s', '<S-Left>',  '<Left>',                                                'Left')
+map('s', '<S-Right>', '<Right>',                                               'Right')
 
 -- Convenience ----------------------------------------------------------------
 map('n', 'ZA', '<Cmd>wqa<CR>',                                                 'Write and close all')
