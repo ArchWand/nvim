@@ -2,7 +2,9 @@ return {
   'kwkarlwang/bufresize.nvim',
   opts = {
     resize = {
-      keys = { '<leader>z' },
+      keys = {
+        { 'n', '<leader>z', '', {} },
+      },
       trigger_events = {},
       increment = 5,
     },
