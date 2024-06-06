@@ -7,11 +7,11 @@ return { -- LSP Configuration & Plugins
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
     -- Useful status updates for LSP.
-    require 'plugins.ide.lsp.fidget',
+    'j-hui/fidget.nvim',
 
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    require 'plugins.ide.lsp.neodev',
+    'folke/neodev.nvim',
   },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.
@@ -34,7 +34,7 @@ return { -- LSP Configuration & Plugins
         local builtin = require 'telescope.builtin'
         map('gd',  builtin.lsp_definitions,                                    '[G]oto [D]efinition')
         map('gI',  builtin.lsp_implementations,                                '[G]oto [I]mplementation')
-        map('glr', builtin.lsp_references,                                     '[G]oto [R]eferences')
+        map('gr',  builtin.lsp_references,                                     '[G]oto [R]eferences')
         map('glt', builtin.lsp_type_definitions,                               'Type [D]efinition')
         map('gld', builtin.lsp_document_symbols,                               '[D]ocument [S]ymbols')
         map('glw', builtin.lsp_dynamic_workspace_symbols,                      '[W]orkspace [S]ymbols')
