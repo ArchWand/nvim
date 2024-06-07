@@ -100,7 +100,7 @@ map('x', 'p', 'pgv"0y:let @1=@+<CR>:let @+=@0<CR>:let @0=@1<CR>', { silent = tru
 -- Fix Inconveniences caused by mapping H and L to BoL and EoL ----------------
 map('n', '^', '0',                                                             'Start of line')
 -- Maintain H and L functionality since H and L are mapped
-map('n', 'M', '<Nop>')
+map('n', 'M', '<Nop>',                                                         'Screen Pos')
 map('n', 'MH', 'H',                                                            'Top of page')
 map('n', 'MM', 'M',                                                            'Middle of page')
 map('n', 'ML', 'L',                                                            'Bottom of page')

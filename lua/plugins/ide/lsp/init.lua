@@ -35,12 +35,15 @@ return { -- LSP Configuration & Plugins
         map('gd',  builtin.lsp_definitions,                                    '[G]oto [D]efinition')
         map('gI',  builtin.lsp_implementations,                                '[G]oto [I]mplementation')
         map('gr',  builtin.lsp_references,                                     '[G]oto [R]eferences')
+        map('gl',  '<Nop>',                                                    'LSP')
         map('glt', builtin.lsp_type_definitions,                               'Type [D]efinition')
         map('gld', builtin.lsp_document_symbols,                               '[D]ocument [S]ymbols')
         map('glw', builtin.lsp_dynamic_workspace_symbols,                      '[W]orkspace [S]ymbols')
 
         -- LSP Keymaps
+        map('<leader>r',  '<Nop>',                                             '[R]ename')
         map('<leader>rn', vim.lsp.buf.rename,                                  '[R]e[n]ame')
+        map('<leader>l',  '<Nop>',                                             'LSP')
         map('<leader>la', vim.lsp.buf.code_action,                             '[C]ode [A]ction')
         map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')
         map('gD',         vim.lsp.buf.declaration,                             '[G]oto [D]eclaration')

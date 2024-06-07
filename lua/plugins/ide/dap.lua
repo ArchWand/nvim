@@ -61,6 +61,7 @@ return {
     }
 
     -- Basic debugging keymaps
+    vim.keymap.set('n', '<leader>d',  '<Nop>', { desc = 'Debug' })
     vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug: Start/Continue' })
     vim.keymap.set('n', '<leader>ds', dap.step_into, { desc = 'Debug: Step Into' })
     vim.keymap.set('n', '<leader>dn', dap.step_over, { desc = 'Debug: Step Over' })
