@@ -12,25 +12,16 @@ return { -- Show pending keybinds
     wk.register({
       D = 'Delete to end of line',
       Y = 'Yank to end of line',
-      -- M = { name = 'Screen Pos' },
       Z = { name = 'Close',
         Q = 'Close buffer',
         Z = 'Write and close buffer',
       },
       g = {
-        -- l = { name = 'LSP',      _ = 'which_key_ignore' },
         s = { name = 'Surround', _ = 'which_key_ignore' },
       },
-      -- ["<leader>"] = {
-        -- d = { name = 'Debug',     _ = 'which_key_ignore' },
-        -- f = { name = 'Telescope', _ = 'which_key_ignore' },
-        -- g = { name = 'Git',       _ = 'which_key_ignore' },
-        -- h = { name = 'Harpoon',   _ = 'which_key_ignore' },
-        -- l = { name = 'LSP',       _ = 'which_key_ignore' },
-        -- q = { name = 'Session',   _ = 'which_key_ignore' },
-        -- r = { name = 'Rename',    _ = 'which_key_ignore' },
-        -- x = { name = 'Trouble',   _ = 'which_key_ignore' },
-      -- },
+      ["<leader>"] = {
+        r = { name = 'Re-', _ = 'which_key_ignore' },
+      },
     })
     wk.register({
         gr = 'Increment Selection',
