@@ -1,6 +1,7 @@
 return {
 
   require 'plugins.display.colorscheme',
+  require 'plugins.display.colorizer',
   require 'plugins.display.dressing',
   require 'plugins.display.lualine',
   require 'plugins.display.indent-blankline', -- Note: check if iter bug fixed

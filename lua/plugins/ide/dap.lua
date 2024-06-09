@@ -16,6 +16,9 @@ return {
     -- Add your own debuggers here
     'mfussenegger/nvim-dap-python',
   },
+  keys = { -- Force lazy loading
+    { '<leader>h', '<Nop>', { desc = 'Harpoon' } },
+  },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -61,13 +64,13 @@ return {
     }
 
     -- Basic debugging keymaps
-    vim.keymap.set('n', '<leader>d',  '<Nop>', { desc = 'Debug' })
-    vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<leader>ds', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<leader>dn', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<leader>dr', dap.step_out, { desc = 'Debug: Step Out' })
-    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-    vim.keymap.set('n', '<leader>dB', function()
+    local map = vim.keymap.set
+    map('n', '<leader>dc', dap.continue,          { desc = 'Debug: Start/Continue' })
+    map('n', '<leader>ds', dap.step_into,         { desc = 'Debug: Step Into' })
+    map('n', '<leader>dn', dap.step_over,         { desc = 'Debug: Step Over' })
+    map('n', '<leader>dr', dap.step_out,          { desc = 'Debug: Step Out' })
+    map('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
+    map('n', '<leader>dB', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Conditional Breakpoint' })
 

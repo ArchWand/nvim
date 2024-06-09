@@ -13,6 +13,7 @@ return { -- LSP Configuration & Plugins
     -- used for completion, annotations and signatures of Neovim apis
     require 'plugins.ide.lsp.lazydev',
   },
+  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     --  This function gets run when an LSP attaches to a particular buffer.
     --    That is to say, every time a new file is opened that is associated with
@@ -41,8 +42,8 @@ return { -- LSP Configuration & Plugins
         map('glw', builtin.lsp_dynamic_workspace_symbols,                      '[W]orkspace [S]ymbols')
 
         -- LSP Keymaps
-        map('<leader>r',  '<Nop>',                                             '[R]ename')
-        map('<leader>rn', vim.lsp.buf.rename,                                  '[R]e[n]ame')
+        -- map('<leader>r',  '<Nop>',                                             'Rename')
+        map('<leader>rn', vim.lsp.buf.rename,                                  'Rename')
         map('<leader>l',  '<Nop>',                                             'LSP')
         map('<leader>la', vim.lsp.buf.code_action,                             '[C]ode [A]ction')
         map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')

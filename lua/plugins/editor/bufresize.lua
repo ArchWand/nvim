@@ -3,7 +3,7 @@ return {
   opts = {
     resize = {
       keys = {
-        { 'n', '<leader>z', '', {} },
+        { 'n', '<leader>rs', '', { desc = 'resize' } },
       },
       trigger_events = {},
       increment = 5,

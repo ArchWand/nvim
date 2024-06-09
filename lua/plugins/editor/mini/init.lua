@@ -1,6 +1,7 @@
 return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
+    event = 'VeryLazy',
     config = function()
       require('mini.ai').setup(       require 'plugins.editor.mini.ai')
       -- require('mini.animate').setup(  require 'plugins.utility.mini.animate')

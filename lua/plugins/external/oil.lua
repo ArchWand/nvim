@@ -1,15 +1,13 @@
 return {
   'stevearc/oil.nvim',
-  event = "VeryLazy",
-  config = function(_, opts)
-    require('oil').setup(opts)
-    local map = vim.keymap.set
-    map('n', '<leader>e', function() require('oil').open_float() end, { desc = 'File picker' })
-  end,
+  keys = {
+    { '<leader>e', function() require('oil').open_float() end, { desc = 'File picker' } },
+  },
+  lazy = false,
   opts = {
-    -- -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
-    -- -- Set to false if you still want to use netrw.
-    -- default_file_explorer = true,
+    -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
+    -- Set to false if you still want to use netrw.
+    default_file_explorer = true,
     -- -- Id is automatically added at the beginning, and name at the end
     -- -- See :help oil-columns
     -- columns = {
@@ -71,6 +69,7 @@ return {
       ["<C-t>"] = "actions.select_tab",
       ["<C-p>"] = "actions.preview",
       ["<C-c>"] = "actions.close",
+      ["<Esc>"] = "actions.close",
       ["<leader>e"] = "actions.close",
       ["<C-l>"] = "actions.refresh",
       ["-"] = "actions.parent",
