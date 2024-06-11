@@ -81,6 +81,10 @@ map('i', '<A-S-l>', '<Esc><A-S-l>a', { remap = true },                         '
 map('nvi', '<A-S-Left>',  '<A-S-h>', { remap = true },                         'Move selection left')
 map('nvi', '<A-S-Right>', '<A-S-l>', { remap = true },                         'Move selection right')
 
+-- Comment --------------------------------------------------------------------
+map('i', '<C-/>', '<C-o>gcc', { remap = true },                                'Comment line' )
+
+
 -- [[ Fixes ]] ================================================================
 -- Send deletions to 0 register instead of system clipboard -------------------
 map('nv', 'd', '"0d',                                                          'Delete')
@@ -95,7 +99,7 @@ map('nv', 'X', '"0X',                                                          '
 map('', '0', '"0',                                                             'Send to 0 register')
 map('n', '<leader>0', '<Cmd>let @+=@0<CR>',                                    'Send 0 register to clipboard')
 -- Visual paste
-map('x', 'p', 'pgv"0y:let @1=@+<CR>:let @+=@0<CR>:let @0=@1<CR>', { silent = true }, 'Paste')
+-- map('x', 'p', 'pgv"0y:let @1=@+<CR>:let @+=@0<CR>:let @0=@1<CR>', { silent = true }, 'Paste')
 
 -- Fix Inconveniences caused by mapping H and L to BoL and EoL ----------------
 map('n', '^', '0',                                                             'Start of line')
