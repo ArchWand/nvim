@@ -8,7 +8,6 @@ return {
   require 'plugins.display.todo-comments',
   require 'plugins.display.which-key',
 
-  -- require 'plugins.editor.autopairs',
   require 'plugins.editor.bullets',
   require 'plugins.editor.bufresize',
   require 'plugins.editor.comment',
@@ -17,6 +16,7 @@ return {
   require 'plugins.editor.nvim-window',
   require 'plugins.editor.persistence',
   require 'plugins.editor.smart-splits',
+  require 'plugins.editor.surround',
   require 'plugins.editor.telescope',
   require 'plugins.editor.undotree',
   require 'plugins.editor.vim-sleuth',
