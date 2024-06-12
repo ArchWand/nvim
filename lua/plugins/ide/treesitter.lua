@@ -55,9 +55,13 @@ return {
         },
       },
 
+      endwise = {
+        enable = true,
+      },
+
       autotag = {
         enable = true,
-      }
+      },
 
     },
     config = function(_, opts)
