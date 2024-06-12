@@ -8,10 +8,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope-ui-select.nvim',
     "debugloop/telescope-undo.nvim",
   },
-  keys = { -- Force lazy loading
-    { '<leader>f', '<Nop>', { desc = 'Telescope' } },
-  },
-  lazy = true,
+  event = 'VeryLazy',
   config = function()
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
@@ -55,6 +52,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     local map = vim.keymap.set
     local builtin = require 'telescope.builtin'
+    map('n', '<leader>f', '<Nop>', { desc = 'Telescope' })
     map('n', '<leader>ff', builtin.find_files,                        { desc = 'Search files'          })
     map('n', '<leader>fg', builtin.live_grep,                         { desc = 'Search in files'       })
     map('n', '<leader>fb', builtin.buffers,                           { desc = 'Search buffers'        })
