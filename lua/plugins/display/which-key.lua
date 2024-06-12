@@ -20,7 +20,8 @@ return { -- Show pending keybinds
         s = { name = 'Surround', _ = 'which_key_ignore' },
       },
       ["<leader>"] = {
-        r = { name = 'Re-', _ = 'which_key_ignore' },
+        r = { name = 'Re-',    _ = 'which_key_ignore' },
+        v = { name = 'Visual', _ = 'which_key_ignore' },
       },
     })
     wk.register({
