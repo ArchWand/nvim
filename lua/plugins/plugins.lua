@@ -5,7 +5,7 @@ return {
   require 'plugins.display.dressing',
   require 'plugins.display.lualine',
   require 'plugins.display.indent-blankline', -- Note: check if iter bug fixed
-  -- require 'plugins.display.todo-comments',
+  require 'plugins.display.todo-comments',
   require 'plugins.display.which-key',
 
   -- require 'plugins.editor.autopairs',
