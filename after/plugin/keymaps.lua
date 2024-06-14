@@ -44,7 +44,7 @@ map('i', '<A-i>', '<Cmd>wincmd p<Cmd>',                                        '
 -- map('n', '[b', '<Cmd>N<CR>',                                                   'Prev buffer')
 
 -- [[ Editing ]] ==============================================================
---- Single insertion/append/substitution/newline
+-- Single insertion/append/substitution/newline -------------------------------
 map('n', '<leader>i', function() SingleInsert('i') end,                        'Insert single char')
 map('n', '<leader>a', function() SingleInsert('a') end,                        'Insert single char at start')
 map('n', '<leader>I', function() SingleInsert('I') end,                        'Append single char')
@@ -101,7 +101,7 @@ map('n', '<leader>0', '<Cmd>let @+=@0<CR>',                                    '
 -- Visual paste
 -- map('x', 'p', 'pgv"0y:let @1=@+<CR>:let @+=@0<CR>:let @0=@1<CR>', { silent = true }, 'Paste')
 
--- Fix Inconveniences caused by mapping H and L to BoL and EoL ----------------
+-- Fix inconveniences caused by mapping H and L to BoL and EoL ----------------
 map('n', '^', '0',                                                             'Start of line')
 -- Maintain H and L functionality since H and L are mapped
 map('n', 'M', '<Nop>',                                                         'Screen Pos')
@@ -109,15 +109,14 @@ map('n', 'MH', 'H',                                                            '
 map('n', 'MM', 'M',                                                            'Middle of page')
 map('n', 'ML', 'L',                                                            'Bottom of page')
 
+-- Miscellaneous --------------------------------------------------------------
 -- Visual indent
 map('v', '<', '<gv',                                                           'Un-indent')
 map('v', '>', '>gv',                                                           'Indent')
-
 -- Total search count
 map('n', 'n', 'n<Cmd>lua print(SearchCount())<CR>')
 map('n', 'N', 'N<Cmd>lua print(SearchCount())<CR>')
-
--- make ' jump horizontally not just vertically
+-- Make ' jump horizontally not just vertically
 map('n', "'", '`')
 
 -- [[ Editor ]] ===============================================================
@@ -150,7 +149,7 @@ map('n', 'zZQ', 'ZQ',                                                          '
 map('n', 'zZZ', 'ZZ',                                                          'Write and close buffer')
 
 -- Toggle settings ------------------------------------------------------------
-map('n', '<leader>n', '<Cmd>setlocal relativenumber!<CR>',                     'Toggle relative numbering')
-map('n', '<leader>w', '<Cmd>set wrap!<CR>',                                    'Toggle word wrapping')
-map('n', '<leader>8', function() ToggleColorcolumn() end,                      'Toggle colorcolumn')
+map('n', '<leader>tn', '<Cmd>setlocal relativenumber!<CR>',                     'Toggle relative numbering')
+map('n', '<leader>tw', '<Cmd>set wrap!<CR>',                                    'Toggle word wrapping')
+map('n', '<leader>t8', function() ToggleColorcolumn() end,                      'Toggle colorcolumn')
 
