@@ -26,7 +26,7 @@ return {
   require 'plugins.external.plantuml',
 
   -- require 'plugins.ide.autoformatter',
-  require 'plugins.ide.dap',
+  -- require 'plugins.ide.dap',
   require 'plugins.ide.linter',
   require 'plugins.ide.lsp',
   require 'plugins.ide.LuaSnip',
