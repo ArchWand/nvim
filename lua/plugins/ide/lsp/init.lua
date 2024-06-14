@@ -12,6 +12,10 @@ return { -- LSP Configuration & Plugins
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     require 'plugins.ide.lsp.lazydev',
+
+    -- Language specific
+    -- 'tweekmonster/django-plus.vim',
+    -- 'simrat39/rust-tools.nvim',
   },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
