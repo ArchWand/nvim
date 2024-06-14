@@ -149,6 +149,7 @@ map('n', 'zZQ', 'ZQ',                                                          '
 map('n', 'zZZ', 'ZZ',                                                          'Write and close buffer')
 
 -- Toggle settings ------------------------------------------------------------
+map('n', '<leader>t', '<Nop>', 'Toggle')
 map('n', '<leader>tn', '<Cmd>setlocal relativenumber!<CR>',                     'Toggle relative numbering')
 map('n', '<leader>tw', '<Cmd>set wrap!<CR>',                                    'Toggle word wrapping')
 map('n', '<leader>t8', function() ToggleColorcolumn() end,                      'Toggle colorcolumn')

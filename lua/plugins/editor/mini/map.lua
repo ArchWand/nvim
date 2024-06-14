@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>m', '<Cmd>lua MiniMap.toggle()<CR>', { desc = 'Toggle MiniMap' })
+vim.keymap.set('n', '<leader>tm', '<Cmd>lua MiniMap.toggle()<CR>', { desc = 'Toggle MiniMap' })
 
 return {
   -- -- Highlight integrations (none by default)
