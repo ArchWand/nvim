@@ -16,9 +16,7 @@ return {
     -- Add your own debuggers here
     'mfussenegger/nvim-dap-python',
   },
-  keys = { -- Force lazy loading
-    { '<leader>h', '<Nop>', { desc = 'Harpoon' } },
-  },
+  enabled = false,
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
