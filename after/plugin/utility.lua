@@ -58,6 +58,17 @@ function ToggleColorcolumn(n)
   vim.opt.colorcolumn = vim.o.cc == s and '0' or s
 end
 
+-- Toggle the comment-related format options
+function ToggleAutoComment()
+  local fo = vim.opt.formatoptions
+
+  if fo:get().r and fo:get().o then
+    vim.opt.formatoptions = fo:remove({ 'r', 'o' })
+  else
+    vim.opt.formatoptions = fo:append({ r = true, o = true })
+  end
+end
+
 -- Give the actual current and total search statistics for large numbers
 function SearchCount()
   local sinfo = vim.fn.searchcount { maxcount = 0 }
