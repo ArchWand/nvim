@@ -23,6 +23,7 @@ return {
 
   require 'plugins.external.gitsigns',
   require 'plugins.external.oil',
+  require 'plugins.external.plantuml',
 
   -- require 'plugins.ide.autoformatter',
   require 'plugins.ide.dap',
