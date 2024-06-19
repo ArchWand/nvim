@@ -35,4 +35,5 @@ set ignorecase smartcase
 " set nohlsearch
 set splitright splitbelow
 set formatoptions=c/qnj
+set nomodeline
 
