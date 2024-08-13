@@ -5,7 +5,7 @@ return {
       keys = {
         { 'n', '<leader>rs', '', { desc = 'resize' } },
       },
-      trigger_events = {},
+      trigger_events = { "VimResized" },
       increment = 5,
     },
   },

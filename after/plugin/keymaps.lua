@@ -31,7 +31,7 @@ map('i', '<Up>',   '<C-o>gk',                                                  '
 -- map('ni', '<C-A-j>', '<C-w><C-j>',                                             'Switch window DOWN')
 -- map('ni', '<C-A-k>', '<C-w><C-k>',                                             'Switch window UP')
 -- map('ni', '<C-A-l>', '<C-w><C-l>',                                             'Switch window RIGHT')
--- map('n', '<A-i>', '<C-w>p',                                                    'Switch to most recent window')
+map('n', '<A-i>', '<C-w>p',                                                    'Switch to most recent window')
 map('i', '<A-i>', '<Cmd>wincmd p<Cmd>',                                        'Switch to most recent window')
 -- map('ni', '<C-A-S-h>', '<C-w><',                                               'Increase split width')
 -- map('ni', '<C-A-S-j>', '<C-w>+',                                               'Increase split height')

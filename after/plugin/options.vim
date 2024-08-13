@@ -27,7 +27,7 @@ set softtabstop=4
 
 " Word wrapping
 set wrap linebreak breakindent
-set showbreak=\ >\ 
+" set showbreak=\ >\ 
 set textwidth=80
 
 " Behavior
