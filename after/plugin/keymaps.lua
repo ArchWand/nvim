@@ -153,5 +153,5 @@ map('n', '<leader>t', '<Nop>', 'Toggle')
 map('n', '<leader>tn', '<Cmd>setlocal relativenumber!<CR>',                     'Toggle relative numbering')
 map('n', '<leader>tw', '<Cmd>set wrap!<CR>',                                    'Toggle word wrapping')
 map('n', '<leader>t8', function() ToggleColorcolumn() end,                      'Toggle colorcolumn')
-map('n', '<leader>tr', function() ToggleAutoComment() end,                      'Insert newline above')
+map('n', '<leader>tr', function() ToggleAutoComment() end,                      'Toggle autocomment')
 
