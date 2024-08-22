@@ -100,7 +100,7 @@ return { -- LSP Configuration & Plugins
       pyright = {},
       rust_analyzer = {},
       texlab = {},
-      ltex = { filetypes = { 'bib', 'tex' } },
+      -- ltex = { filetypes = { 'bib', 'tex' } },
 
       lua_ls = {
         settings = {

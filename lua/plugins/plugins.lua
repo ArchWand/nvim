@@ -22,6 +22,7 @@ return {
   require 'plugins.editor.vim-sleuth',
 
   require 'plugins.external.gitsigns',
+  require 'plugins.external.latex',
   require 'plugins.external.markdown',
   require 'plugins.external.oil',
   require 'plugins.external.plantuml',
