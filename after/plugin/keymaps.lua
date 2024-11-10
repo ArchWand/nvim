@@ -55,12 +55,12 @@ map('n', '<leader>O', [["m'".v:count."O<Esc>`'"]], { expr = true },            '
 -- Drag selection -------------------------------------------------------------
 -- Managed by mini.move
 -- -- Vertical
--- map('ni', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,           'Drag line down')
--- map('ni', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,           'Drag line up')
+map('i', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,            'Drag line down')
+map('i', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,            'Drag line up')
 -- map('v', '<A-j>',  [[":m '>+".(v:count1)."<CR>gv"]], { expr = true },          'Drag block Down')
 -- map('v', '<A-k>',  [[":m '<-".(v:count1+1)."<CR>gv"]], { expr = true },        'Drag block up')
--- map('nvi', '<A-Down>', '<A-j>', { remap = true },                              'Move selection down')
--- map('nvi', '<A-Up>',   '<A-k>', { remap = true },                              'Move selection up')
+map('nvi', '<A-Down>', '<A-j>', { remap = true },                              'Move selection down')
+map('nvi', '<A-Up>',   '<A-k>', { remap = true },                              'Move selection up')
 -- -- Block horizontal
 -- map('n', '<A-h>', '<<',                                                        'Un-indent')
 -- map('n', '<A-l>', '>>',                                                        'Indent')
