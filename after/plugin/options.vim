@@ -36,4 +36,5 @@ set ignorecase smartcase
 set splitright splitbelow
 set formatoptions=c/qnj
 set nomodeline
+set virtualedit+=onemore
 

@@ -8,10 +8,9 @@ end
 -- "Smart" beginning and end of line ------------------------------------------
 map('nvi', '<Home>', function() GoBoL() end,                                   'Beginning of line')
 map('nv',  '<End>',  function() GoEoL() end,                                   'End of line')
-map('nv',  'H',      function() GoBoL() end,                                   'End of line')
-map('nv',  'L',      function() GoEoL() end,                                   'End of line')
-map('o',   'H',      '0',                                                      'Beginning of line')
-map('o',   'L',      '$',                                                      'End of line')
+map('i',   '<End>',  '<C-o><End>', { remap = true },                           'End of line') -- Works with ve=onemore
+map('nvo', 'H',      function() GoBoL() end,                                   'Beginning of line')
+map('nvo', 'L',      function() GoEoL() end,                                   'End of line')
 
 -- Use wrapped movement by default --------------------------------------------
 map('nv', 'j',      'v:count ? "j" : "gj"', { expr = true },                   'Down')
