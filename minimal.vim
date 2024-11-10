@@ -1,5 +1,5 @@
 set mouse=a
-set clipbaord=unnamedplus
+set clipboard=unnamedplus
 set number relativenumber
 set splitright splitbelow
 
