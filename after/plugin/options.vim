@@ -5,6 +5,7 @@ set undofile
 set updatetime=250
 " set notimeout timeoutlen=1000 " Managed by which-key
 set shada=!,%,'100,s10,h
+set noautoread
 
 " Display
 set number relativenumber
@@ -13,7 +14,7 @@ set colorcolumn=80
 set scrolloff=7
 set showmode
 " set inccommand=nosplit
-" set signcolumn=no
+set signcolumn=yes
 set conceallevel=0
 set listchars=eol:$,tab:>-,space:.
 set listchars+=multispace:---+,lead:.,trail:~
