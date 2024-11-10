@@ -48,7 +48,6 @@ return { -- LSP Configuration & Plugins
         -- LSP Keymaps
         -- map('<leader>r',  '<Nop>',                                             'Rename')
         map('<leader>rn', vim.lsp.buf.rename,                                  'Rename')
-        map('<leader>l',  '<Nop>',                                             'LSP')
         map('<leader>la', vim.lsp.buf.code_action,                             '[C]ode [A]ction')
         map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')
         map('gD',         vim.lsp.buf.declaration,                             '[G]oto [D]eclaration')
