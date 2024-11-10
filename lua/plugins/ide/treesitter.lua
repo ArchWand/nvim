@@ -2,6 +2,13 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    enabled = function(lang, buf)
+      local file = vim.fn.expand("%:p")
+      if file == "" then return true end
+      local file_size = vim.fn.getfsize(file)
+      return file_size < 25 * 1024 -- 25 KB
+    end,
+
     opts = {
       ensure_installed = { 'bash', 'c', 'cpp', 'diff', 'html', 'java', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
 
@@ -86,6 +93,6 @@ return {
       -- separator = nil,
       -- zindex = 20, -- The Z-index of the context window
       -- on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-    }
+    },
   },
 }
