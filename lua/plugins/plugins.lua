@@ -12,6 +12,7 @@ return {
   require 'plugins.editor.bufresize',
   require 'plugins.editor.comment',
   require 'plugins.editor.harpoon',
+  require 'plugins.editor.indent',
   require 'plugins.editor.mini',
   require 'plugins.editor.nvim-window',
   require 'plugins.editor.persistence',
@@ -19,7 +20,6 @@ return {
   require 'plugins.editor.surround',
   require 'plugins.editor.telescope',
   require 'plugins.editor.undotree',
-  require 'plugins.editor.vim-sleuth',
 
   require 'plugins.external.gitsigns',
   require 'plugins.external.latex',
