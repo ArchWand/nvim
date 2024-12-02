@@ -42,6 +42,6 @@ nnoremap ML L
 vnoremap < <gv
 vnoremap > >gv
 
-commmand R source $MYVIMRC
+command R source $MYVIMRC
 let mapleader=' '
 
