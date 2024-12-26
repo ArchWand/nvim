@@ -8,6 +8,7 @@ set shada=!,%,'100,s10,h
 set noautoread
 
 " Display
+let g:have_nerd_font=v:true
 set number relativenumber
 set cursorline cursorcolumn
 set colorcolumn=80
@@ -25,6 +26,12 @@ set noexpandtab
 set     tabstop=4
 set  shiftwidth=4
 set softtabstop=4
+
+" Folding
+let g:markdown_folding = 1
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=999
 
 " Word wrapping
 set wrap linebreak breakindent

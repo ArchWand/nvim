@@ -4,6 +4,9 @@ local function map(m, lhs, rhs, o, d)
   vim.keymap.set(mode, lhs, rhs, opts)                                          -- Make keymapping
 end
 
+vim.g.mapleader=' '
+vim.g.maplocalleader='\\'
+
 -- [[ Navigation ]] =========================================================== Related to moving the cursor inside Neovim
 -- "Smart" beginning and end of line ------------------------------------------
 map('nvi', '<Home>', function() GoBoL() end,                                   'Beginning of line')
@@ -80,8 +83,11 @@ map('i', '<A-S-l>', '<Esc><A-S-l>a', { remap = true },                         '
 map('nvi', '<A-S-Left>',  '<A-S-h>', { remap = true },                         'Move selection left')
 map('nvi', '<A-S-Right>', '<A-S-l>', { remap = true },                         'Move selection right')
 
--- Comment --------------------------------------------------------------------
+-- Miscellaneous --------------------------------------------------------------
+-- Comment
 map('i', '<C-/>', '<C-o>gcc', { remap = true },                                'Comment line' )
+-- Replace word
+map('n', 'crn', '*Ncgn',                                                       'Replace word' )
 
 
 -- [[ Fixes ]] ================================================================

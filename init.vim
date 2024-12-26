@@ -1,7 +1,3 @@
-let mapleader=' '
-let maplocalleader='\'
-let g:have_nerd_font=v:true
-
 source ~/.config/nvim/settings/utility.lua
 source ~/.config/nvim/settings/options.vim
 source ~/.config/nvim/settings/keymaps.lua
