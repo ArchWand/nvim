@@ -103,6 +103,12 @@ map('nv', 'X', '"0X',                                                          '
 -- Easy access to the 0 register and its contents
 map('', '0', '"0',                                                             'Send to 0 register')
 map('n', '<leader>0', '<Cmd>let @+=@0<CR>',                                    'Send 0 register to clipboard')
+-- Send to other registers from clipboard
+local regs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+for i = 1, #regs do
+  local r = regs:sub(i, i)
+  map( 'n', '<leader>"' .. r, '<Cmd>let @' .. r .. '=@+<CR>',                  'Send clipboard to ' .. r .. ' register')
+end
 -- Visual paste
 -- map('x', 'p', 'pgv"0y:let @1=@+<CR>:let @+=@0<CR>:let @0=@1<CR>', { silent = true }, 'Paste')
 
