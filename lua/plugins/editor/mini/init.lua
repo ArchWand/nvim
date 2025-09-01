@@ -11,6 +11,7 @@ return {
       require('mini.map').setup(      require 'plugins.editor.mini.map')
       require('mini.move').setup(     require 'plugins.editor.mini.move')
       -- require('mini.pairs').setup(    require 'plugins.editor.mini.pairs')
+      -- require('mini.pick').setup(     require 'plugins.editor.mini.pick')
       -- require('mini.surround').setup( require 'plugins.editor.mini.surround')
     end,
   },
