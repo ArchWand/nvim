@@ -1,8 +1,11 @@
-local M = require 'plugins.display.colorscheme.catppuccin'
+local a = require 'plugins.display.colorscheme.catppuccin'
+local b = require 'plugins.display.colorscheme.tokyonight'
 
-M.init = function()
+a.init = function()
   vim.cmd.colorscheme 'catppuccin-mocha'
 end
 
-return M
-
+return {
+  a,
+  b,
+}
