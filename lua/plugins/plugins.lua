@@ -6,7 +6,7 @@ return {
   require 'plugins.display.lualine',
   require 'plugins.display.indent-blankline', -- Note: check if iter bug fixed
   require 'plugins.display.todo-comments',
-  -- require 'plugins.display.which-key',
+  require 'plugins.display.which-key',
 
   require 'plugins.editor.bullets',
   require 'plugins.editor.bufresize',
@@ -17,6 +17,7 @@ return {
   require 'plugins.editor.nvim-window',
   require 'plugins.editor.persistence',
   require 'plugins.editor.smart-splits',
+  require 'plugins.editor.suda',
   require 'plugins.editor.surround',
   require 'plugins.editor.telescope',
   require 'plugins.editor.undotree',
@@ -27,7 +28,7 @@ return {
   require 'plugins.external.oil',
   require 'plugins.external.plantuml',
 
-  -- require 'plugins.ide.autoformatter',
+  require 'plugins.ide.autoformatter',
   -- require 'plugins.ide.dap',
   require 'plugins.ide.linter',
   require 'plugins.ide.lsp',

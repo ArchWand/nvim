@@ -38,19 +38,10 @@ return { -- LSP Configuration & Plugins
         -- Telescope pickers
         local builtin = require 'telescope.builtin'
         map('gd',  builtin.lsp_definitions,                                    '[G]oto [D]efinition')
-        map('gI',  builtin.lsp_implementations,                                '[G]oto [I]mplementation')
-        map('gr',  builtin.lsp_references,                                     '[G]oto [R]eferences')
-        map('gl',  '<Nop>',                                                    'LSP')
-        map('glt', builtin.lsp_type_definitions,                               'Type [D]efinition')
+        map('grt', builtin.lsp_type_definitions,                               '[T]ype Definition')
+        map('grr',  builtin.lsp_references,                                    '[G]oto [R]eferences')
+        map('grO', builtin.lsp_dynamic_workspace_symbols,                      'Workspace Symbols')
         map('gld', builtin.lsp_document_symbols,                               '[D]ocument [S]ymbols')
-        map('glw', builtin.lsp_dynamic_workspace_symbols,                      '[W]orkspace [S]ymbols')
-
-        -- LSP Keymaps
-        -- map('<leader>r',  '<Nop>',                                             'Rename')
-        map('<leader>rn', vim.lsp.buf.rename,                                  'Rename')
-        map('<leader>la', vim.lsp.buf.code_action,                             '[C]ode [A]ction')
-        map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')
-        map('gD',         vim.lsp.buf.declaration,                             '[G]oto [D]eclaration')
 
         -- Diagnostic mappings
         -- Managed by mini.bracketed
@@ -98,6 +89,8 @@ return { -- LSP Configuration & Plugins
       jdtls = {},
       pyright = {},
       rust_analyzer = {},
+      ['eslint-lsp'] = {},
+      prettier = {},
       texlab = {},
       -- ltex = { filetypes = { 'bib', 'tex' } },
 

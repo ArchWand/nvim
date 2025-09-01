@@ -28,7 +28,6 @@ return { -- Adds git signs to the gutter, as well as utilities for managing chan
       end, { desc = 'Prev hunk' })
 
       -- Actions
-      map({'n', 'v'}, '<leader>g', '<Nop>', { desc = 'Git' })
       map('n', '<leader>gs', gitsigns.stage_hunk, { desc = 'Stage hunk' })
       map('n', '<leader>gr', gitsigns.reset_hunk, { desc = 'Reset hunk' })
       map('v', '<leader>gs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Stage hunk' })

@@ -9,20 +9,35 @@ return { -- Show pending keybinds
     wk.setup(opts)
 
     wk.add({
+      { "<leader>f", group = "Telescope" },
       { "<leader>h", group = "Harpoon" },
+      { "<leader>g", group = "Git" },
       { "<leader>l", group = "LSP" },
+      { "<leader>q", group = "Session" },
       { "<leader>r", group = "Re-" },
+      { "<leader>t", group = "Toggle" },
       { "<leader>v", group = "Visual" },
       { "D", desc = "Delete to end of line" },
       { "Y", desc = "Yank to end of line" },
+      { "M", group = "Screen Pos" },
       { "Z", group = "Close" },
       { "ZQ", desc = "Close buffer" },
       { "ZZ", desc = "Write and close buffer" },
       { "gs", group = "Surround" },
+      { "gr", group = "LSP" },
+      { "grn", desc = "Rename" },
+      { "gra", desc = "Code [A]ction" },
+      { "grr", desc = "Goto [R]eferences" },
+      { "gri", desc = "Goto [I]mplementation" },
     })
     wk.add({
       { "gr", desc = "Increment Selection", mode = "v" },
     })
+        -- map('gO', builtin.lsp_document_symbols,                                '[D]ocument [S]ymbols')
+
+        -- LSP Keymaps
+        -- map('K',          vim.lsp.buf.hover,                                   'Hover Documentation')
+        -- map('gD',         vim.lsp.buf.declaration,                             '[G]oto [D]eclaration')
   end,
   opts = {
     ---@type false | "classic" | "modern" | "helix"
