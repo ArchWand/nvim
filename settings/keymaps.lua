@@ -123,7 +123,7 @@ local function SmartReg(key)
   return (vim.v.register == '"' and '"+' or '') .. key
 end
 map('nx', 'y', function() return SmartReg('y') end, { expr = true },           'Yank')
-map('nx', 'Y', function() return SmartReg('y$') end, { expr = true },          'Yank to end')
+map('n',  'Y', function() return SmartReg('y$') end, { expr = true },          'Yank to end')
 map('nx', 'p', function() return SmartReg('p') end, { expr = true },           'Put')
 map('nx', 'P', function() return SmartReg('P') end, { expr = true },           'Put before')
 -- Easy access vim registers from the clipboard

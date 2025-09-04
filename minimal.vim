@@ -1,5 +1,5 @@
 set mouse=a
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 set number relativenumber
 set splitright splitbelow
 
@@ -9,6 +9,8 @@ vnoremap H ^
 vnoremap L $
 onoremap H 0
 onoremap L $
+noremap y "+y
+nmap Y "+Y
 
 nnoremap <expr> j v:count ? "j" : "gj"
 nnoremap <expr> k v:count ? "k" : "gk"
@@ -21,12 +23,6 @@ inoremap <expr> <A-j> "<Cmd>m +".v:count1."<CR>"
 inoremap <expr> <A-k> "<Cmd>m -".(v:count1+1)."<CR>"
 vnoremap <expr> <A-j> ":m '>+".v:count1."<CR>gv"
 vnoremap <expr> <A-k> ":m '<-".(v:count1+1)."<CR>gv"
-
-let send_to_zero="dDcCsSxX"
-for c in split(send_to_zero, '\zs')
-  nnoremap $c "0$c
-  vnoremap $c "0$c
-endfor
 
 nnoremap <A-h> <<
 nnoremap <A-l> >>
@@ -41,6 +37,18 @@ nnoremap MM M
 nnoremap ML L
 vnoremap < <gv
 vnoremap > >gv
+
+function! SmartReg(key)
+  return (v:register == '"' ? '"+' : '') . a:key
+endfunction
+nnoremap <expr> y SmartReg('y')
+xnoremap <expr> y SmartReg('y')
+nnoremap <expr> Y SmartReg('y$')
+nnoremap <expr> p SmartReg('p')
+xnoremap <expr> p SmartReg('p')
+nnoremap <expr> P SmartReg('P')
+xnoremap <expr> P SmartReg('P')
+nnoremap <leader>p <Cmd>let @+=@"<CR>
 
 command R source $MYVIMRC
 let mapleader=' '

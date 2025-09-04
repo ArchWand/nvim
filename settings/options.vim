@@ -1,6 +1,6 @@
 " System
 set mouse=a
-set clipboard=unnamed " prevent deletions from clobbering system clipboard
+" set clipboard=unnamedplus " prevent deletions from clobbering system clipboard
 set undofile
 set updatetime=250
 " set notimeout timeoutlen=1000 " Managed by which-key
