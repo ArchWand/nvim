@@ -9,8 +9,10 @@ nmap Y "+Y
 noremap p "+p
 noremap P "+P
 
-noremap H ^
-noremap L $
+nnoremap H ^
+xnoremap H ^
+nnoremap L $
+xnoremap L $
 
 nnoremap MH H
 nnoremap MM M
@@ -18,6 +20,9 @@ nnoremap ML L
 
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
+
+let mapleader=' '
+command R source $MYVIMRC
 
 nnoremap <expr> j v:count ? "j" : "gj"
 nnoremap <expr> k v:count ? "k" : "gk"
@@ -59,6 +64,38 @@ nnoremap <expr> P SmartReg('P')
 xnoremap <expr> P SmartReg('P')
 nnoremap <leader>p <Cmd>let @+=@"<CR>
 
-command R source $MYVIMRC
-let mapleader=' '
+" "Smart" home
+" Go to the beginning of the line
+function! GoBoL()
+  let pos1 = col('.')
+  normal! g^
+  let pos2 = col('.')
+  if pos1 == pos2
+    normal! ^
+    let pos1 = col('.')
+    if pos1 == pos2
+      normal! 0
+    endif
+  endif
+endfunction
+
+" "Smart" end
+" Go to the end of the line
+function! GoEoL()
+  let pos = col('.')
+  normal! g$
+  if col('.') == pos
+    normal! $
+  endif
+  if col('.') == len(getline('.'))
+    let curpos = getpos('.')
+    let curpos[4] = v:maxcol " set curswant
+    call setpos('.', curpos)
+  endif
+endfunction
+
+nnoremap H <Cmd>call GoBoL()<CR>
+xnoremap H <Cmd>call GoBoL()<CR>
+nnoremap L <Cmd>call GoEoL()<CR>
+xnoremap L <Cmd>call GoEoL()<CR>
 
