@@ -55,6 +55,11 @@ inoremap <A-i> <Cmd>wincmd p<CR>
 
 onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
 
+unmap y
+nunmap Y
+unmap p
+unmap P
+
 function! SmartReg(key)
   return (v:register == '"' ? '"+' : '') . a:key
 endfunction
@@ -96,6 +101,11 @@ function! GoEoL()
     call setpos('.', curpos)
   endif
 endfunction
+
+nunmap H
+xunmap H
+nunmap L
+xunmap L
 
 nnoremap H <Cmd>call GoBoL()<CR>
 xnoremap H <Cmd>call GoBoL()<CR>
