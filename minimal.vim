@@ -53,6 +53,8 @@ noremap <C-A-l> <C-w><C-l>
 nnoremap <A-i> <C-w>p
 inoremap <A-i> <Cmd>wincmd p<CR>
 
+onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
+
 function! SmartReg(key)
   return (v:register == '"' ? '"+' : '') . a:key
 endfunction
