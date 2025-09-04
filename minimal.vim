@@ -3,6 +3,7 @@ set mouse=a
 set number relativenumber
 set ignorecase smartcase incsearch hlsearch
 set splitright splitbelow
+set virtualedit+=onemore
 
 noremap y "+y
 nmap Y "+Y
