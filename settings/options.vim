@@ -1,6 +1,6 @@
 " System
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed " prevent deletions from clobbering system clipboard
 set undofile
 set updatetime=250
 " set notimeout timeoutlen=1000 " Managed by which-key
@@ -39,9 +39,9 @@ set wrap linebreak breakindent
 set textwidth=80
 
 " Behavior
-set ignorecase smartcase
-" set nohlsearch
+set ignorecase smartcase incsearch hlsearch
 set splitright splitbelow
+set formatexpr=lua.require'conform'.formatexpr()
 set formatoptions=c/qnj
 set nomodeline
 set virtualedit+=onemore
