@@ -129,6 +129,9 @@ map('nx', 'P', function() return SmartReg('P') end, { expr = true },           '
 -- Easy access vim registers from the clipboard
 map('n', '<leader>p', '<Cmd>let @+=@"<CR>',                                    'Send previous register to clipboard')
 
+-- Helix undo
+map('n', 'U', '<C-r>',                                                         'Undo')
+
 -- Maintain H and L functionality since H and L are mapped
 map('n', 'MH', 'H',                                                            'Top of page')
 map('n', 'MM', 'M',                                                            'Middle of page')

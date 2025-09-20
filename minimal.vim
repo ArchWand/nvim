@@ -22,6 +22,8 @@ nnoremap MH H
 nnoremap MM M
 nnoremap ML L
 
+nnoremap U <C-r>
+
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
 
