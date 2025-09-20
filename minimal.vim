@@ -5,10 +5,13 @@ set ignorecase smartcase incsearch hlsearch
 set splitright splitbelow
 set virtualedit+=onemore
 
-noremap y "+y
+nnoremap y "+y
+vnoremap y "+y
 nmap Y "+Y
-noremap p "+p
-noremap P "+P
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
 
 nnoremap H ^
 xnoremap H ^
@@ -55,10 +58,13 @@ inoremap <A-i> <Cmd>wincmd p<CR>
 
 onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
 
-unmap y
+nunmap y
+vunmap y
 nunmap Y
-unmap p
-unmap P
+nunmap p
+vunmap p
+nunmap P
+vunmap P
 
 function! SmartReg(key)
   return (v:register == '"' ? '"+' : '') . a:key
