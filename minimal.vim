@@ -5,13 +5,8 @@ set ignorecase smartcase incsearch hlsearch
 set splitright splitbelow
 set virtualedit+=onemore
 
-nnoremap y "+y
-vnoremap y "+y
-nmap Y "+Y
-nnoremap p "+p
-vnoremap p "+p
-nnoremap P "+P
-vnoremap P "+P
+noremap <expr> j v:count ? "j" : "gj"
+noremap <expr> k v:count ? "k" : "gk"
 
 nnoremap H ^
 xnoremap H ^
@@ -22,18 +17,19 @@ nnoremap MH H
 nnoremap MM M
 nnoremap ML L
 
+noremap y "+y
+nmap Y "+Y
+noremap p "+p
+noremap P "+P
+
 nnoremap U <C-r>
+let mapleader=' '
+nnoremap <leader>p <Cmd>let @+=@"<CR>
+command R source $MYVIMRC
 
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
-
-let mapleader=' '
-command R source $MYVIMRC
-
-nnoremap <expr> j v:count ? "j" : "gj"
-nnoremap <expr> k v:count ? "k" : "gk"
-vnoremap <expr> j v:count ? "j" : "gj"
-vnoremap <expr> k v:count ? "k" : "gk"
+onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
 
 nnoremap <expr> <A-j> "<Cmd>m +".v:count1."<CR>"
 nnoremap <expr> <A-k> "<Cmd>m -".(v:count1+1)."<CR>"
@@ -58,15 +54,10 @@ noremap <C-A-l> <C-w><C-l>
 nnoremap <A-i> <C-w>p
 inoremap <A-i> <Cmd>wincmd p<CR>
 
-onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
-
-nunmap y
-vunmap y
+unmap y
 nunmap Y
-nunmap p
-vunmap p
-nunmap P
-vunmap P
+unmap p
+unmap P
 
 function! SmartReg(key)
   return (v:register == '"' ? '"+' : '') . a:key
@@ -78,7 +69,6 @@ nnoremap <expr> p SmartReg('p')
 xnoremap <expr> p SmartReg('p')
 nnoremap <expr> P SmartReg('P')
 xnoremap <expr> P SmartReg('P')
-nnoremap <leader>p <Cmd>let @+=@"<CR>
 
 " "Smart" home
 " Go to the beginning of the line

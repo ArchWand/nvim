@@ -9,11 +9,11 @@ vim.g.maplocalleader='\\'
 
 -- [[ Navigation ]] =========================================================== Related to moving the cursor inside Neovim
 -- "Smart" beginning and end of line ------------------------------------------
-map('nvi', '<Home>', function() GoBoL() end,                                   'Beginning of line')
-map('nv',  '<End>',  function() GoEoL() end,                                   'End of line')
+map('nxi', '<Home>', function() GoBoL() end,                                   'Beginning of line')
+map('nx',  '<End>',  function() GoEoL() end,                                   'End of line')
 map('i',   '<End>',  '<C-o><End>', { remap = true },                           'End of line') -- Works with ve=onemore
-map('nvo', 'H',      function() GoBoL() end,                                   'Beginning of line')
-map('nvo', 'L',      function() GoEoL() end,                                   'End of line')
+map('nxo', 'H',      function() GoBoL() end,                                   'Beginning of line')
+map('nxo', 'L',      function() GoEoL() end,                                   'End of line')
 
 -- Use wrapped movement by default --------------------------------------------
 map('nv', 'j',      'v:count ? "j" : "gj"', { expr = true },                   'Down')
@@ -50,8 +50,8 @@ map('n', '<leader>A', function() SingleInsert('A') end,                        '
 -- Drag selection -------------------------------------------------------------
 -- Managed by mini.move
 -- -- Vertical
--- map('i', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,            'Drag line down')
--- map('i', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,            'Drag line up')
+-- map('ni', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,           'Drag line down')
+-- map('ni', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,           'Drag line up')
 -- map('v', '<A-j>',  [[":m '>+".(v:count1)."<CR>gv"]], { expr = true },          'Drag block Down')
 -- map('v', '<A-k>',  [[":m '<-".(v:count1+1)."<CR>gv"]], { expr = true },        'Drag block up')
 map('nvi', '<A-Down>', '<A-j>', { remap = true },                              'Move selection down')
@@ -63,8 +63,8 @@ map('nvi', '<A-Up>',   '<A-k>', { remap = true },                              '
 -- map('v', '<A-l>', '>gv',                                                       'Indent')
 -- map('i', '<A-h>', '<C-d>',                                                     'Un-indent')
 -- map('i', '<A-l>', '<C-t>',                                                     'Indent')
--- map('nvi', '<A-Left>',  '<A-h>', { remap = true },                             'Un-indent')
--- map('nvi', '<A-Right>', '<A-l>', { remap = true },                             'Indent')
+map('nvi', '<A-Left>',  '<A-h>', { remap = true },                             'Un-indent')
+map('nvi', '<A-Right>', '<A-l>', { remap = true },                             'Indent')
 -- Horizontal
 map('n', '<A-S-h>', 'Xph',                                                     'Drag character left')
 map('n', '<A-S-l>', 'xp',                                                      'Drag character right')
@@ -80,6 +80,7 @@ map('nvi', '<A-S-Right>', '<A-S-l>', { remap = true },                         '
 map('i', '<C-/>', '<C-o>gcc', { remap = true },                                'Comment line' )
 -- Replace word
 map('n', 'crn', '*Ncgn',                                                       'Replace word' )
+map('i', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,            'Drag line down')
 
 -- [[ Editor ]] ===============================================================
 -- Common shortcuts -----------------------------------------------------------
@@ -128,9 +129,6 @@ map('nx', 'p', function() return SmartReg('p') end, { expr = true },           '
 map('nx', 'P', function() return SmartReg('P') end, { expr = true },           'Put before')
 -- Easy access vim registers from the clipboard
 map('n', '<leader>p', '<Cmd>let @+=@"<CR>',                                    'Send previous register to clipboard')
-
--- Helix undo
-map('n', 'U', '<C-r>',                                                         'Undo')
 
 -- Maintain H and L functionality since H and L are mapped
 map('n', 'MH', 'H',                                                            'Top of page')
