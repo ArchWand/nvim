@@ -49,9 +49,9 @@ map('n', '<leader>A', function() SingleInsert('A') end,                        '
 
 -- Drag selection -------------------------------------------------------------
 -- Managed by mini.move
--- -- Vertical
--- map('ni', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,           'Drag line down')
--- map('ni', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,           'Drag line up')
+-- -- Vertical (normal mode managed by plugin)
+map('i', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,            'Drag line down')
+map('i', '<A-k>', function() vim.cmd.move('-'..vim.v.count1+1) end,            'Drag line up')
 -- map('v', '<A-j>',  [[":m '>+".(v:count1)."<CR>gv"]], { expr = true },          'Drag block Down')
 -- map('v', '<A-k>',  [[":m '<-".(v:count1+1)."<CR>gv"]], { expr = true },        'Drag block up')
 map('nvi', '<A-Down>', '<A-j>', { remap = true },                              'Move selection down')
@@ -72,8 +72,8 @@ map('v', '<A-S-h>', 'xhPgvhoho',                                               '
 map('v', '<A-S-l>', 'xpgvlolo',                                                'Drag block right')
 map('i', '<A-S-h>', '<Esc><A-S-h>a', { remap = true },                         'Drag character left')
 map('i', '<A-S-l>', '<Esc><A-S-l>a', { remap = true },                         'Drag character right')
-map('nvi', '<A-S-Left>',  '<A-S-h>', { remap = true },                         'Move selection left')
-map('nvi', '<A-S-Right>', '<A-S-l>', { remap = true },                         'Move selection right')
+map('nv', '<A-S-Left>',  '<A-S-h>', { remap = true },                         'Move selection left')
+map('nv', '<A-S-Right>', '<A-S-l>', { remap = true },                         'Move selection right')
 
 -- Miscellaneous --------------------------------------------------------------
 -- Comment

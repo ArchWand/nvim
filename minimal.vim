@@ -22,6 +22,7 @@ nmap Y "+Y
 noremap p "+p
 noremap P "+P
 
+nnoremap crn *Ncgn
 nnoremap U <C-r>
 let mapleader=' '
 nnoremap <leader>p <Cmd>let @+=@"<CR>
@@ -30,6 +31,11 @@ command R source $MYVIMRC
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR>
 onoremap <C-a> <Cmd>normal! m9ggVG<CR><Cmd>normal! `9<CR>
+
+nnoremap <A-S-h> Xph
+nnoremap <A-S-l> xp
+vnoremap <A-S-h> xhPgvhoho
+vnoremap <A-S-l> xpgvlolo
 
 nnoremap <expr> <A-j> "<Cmd>m +".v:count1."<CR>"
 nnoremap <expr> <A-k> "<Cmd>m -".(v:count1+1)."<CR>"
