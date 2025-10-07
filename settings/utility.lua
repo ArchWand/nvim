@@ -1,7 +1,7 @@
 -- Utility file must be lua, not vimscript, so LSP can find it
 
 -- [[ Vimscript Functions ]]
-vim.cmd([[
+vim.cmd [[
 
 " Delete all registers
 function WipeRegs()
@@ -51,7 +51,7 @@ function ToggleHex()
   let &modifiable=l:oldmodifiable
 endfunction
 
-]])
+]]
 
 -- [[ Lua Functions ]]
 
@@ -78,8 +78,8 @@ function GoEoL()
   if vim.fn.col '.' == pos then
     vim.cmd 'normal! $'
   end
-  if vim.fn.col('.') == #vim.fn.getline('.') then
-    local curpos = vim.fn.getpos('.')
+  if vim.fn.col '.' == #vim.fn.getline '.' then
+    local curpos = vim.fn.getpos '.'
     curpos[5] = vim.v.maxcol -- Set curswant
     vim.fn.setpos('.', curpos)
   end
@@ -94,7 +94,7 @@ end
 -- Defaults to textwidth, or if textwidth is not set, 80.
 function ToggleColorcolumn(n)
   n = n or ((vim.o.tw == 0) and vim.o.tw or 80)
-  local s = ''..n
+  local s = '' .. n
   vim.opt.colorcolumn = vim.o.cc == s and '0' or s
 end
 
@@ -103,18 +103,16 @@ function ToggleAutoComment()
   local fo = vim.opt.formatoptions
 
   if fo:get().r and fo:get().o then
-    vim.opt.formatoptions = fo:remove({ 'r', 'o' })
+    vim.opt.formatoptions = fo:remove { 'r', 'o' }
   else
-    vim.opt.formatoptions = fo:append({ r = true, o = true })
+    vim.opt.formatoptions = fo:append { r = true, o = true }
   end
 end
 
 -- Give the actual current and total search statistics for large numbers
 function SearchCount()
   local sinfo = vim.fn.searchcount { maxcount = 0 }
-  local search_stat = sinfo.incomplete > 0 and '[?/?]'
-    or sinfo.total > 0 and ('[%s/%s]'):format(sinfo.current, sinfo.total)
-    or nil
+  local search_stat = sinfo.incomplete > 0 and '[?/?]' or sinfo.total > 0 and ('[%s/%s]'):format(sinfo.current, sinfo.total) or nil
   if search_stat then
     return search_stat
   end

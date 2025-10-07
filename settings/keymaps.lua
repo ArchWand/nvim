@@ -9,11 +9,11 @@ vim.g.maplocalleader='\\'
 
 -- [[ Navigation ]] =========================================================== Related to moving the cursor inside Neovim
 -- "Smart" beginning and end of line ------------------------------------------
-map('nxi', '<Home>', function() GoBoL() end,                                   'Beginning of line')
-map('nx',  '<End>',  function() GoEoL() end,                                   'End of line')
+map('nxi', '<Home>', GoBoL,                                                    'Beginning of line')
+map('nx',  '<End>',  GoEoL,                                                    'End of line')
 map('i',   '<End>',  '<C-o><End>', { remap = true },                           'End of line') -- Works with ve=onemore
-map('nxo', 'H',      function() GoBoL() end,                                   'Beginning of line')
-map('nxo', 'L',      function() GoEoL() end,                                   'End of line')
+map('nxo', 'H',      GoBoL,                                                    'Beginning of line')
+map('nxo', 'L',      GoEoL,                                                    'End of line')
 
 -- Use wrapped movement by default --------------------------------------------
 map('nv', 'j',      'v:count ? "j" : "gj"', { expr = true },                   'Down')
@@ -80,7 +80,6 @@ map('nvi', '<A-S-Right>', '<A-S-l>', { remap = true },                         '
 map('i', '<C-/>', '<C-o>gcc', { remap = true },                                'Comment line' )
 -- Replace word
 map('n', 'crn', '*Ncgn',                                                       'Replace word' )
-map('i', '<A-j>', function() vim.cmd.move('+'..vim.v.count1)   end,            'Drag line down')
 
 -- [[ Editor ]] ===============================================================
 -- Common shortcuts -----------------------------------------------------------
@@ -115,8 +114,8 @@ map('n', '<leader>tn', '<Cmd>setlocal relativenumber!<CR>',                    '
 map('n', '<leader>ts', '<Cmd>set spell!<CR>',                                  'Toggle spellcheck')
 map('n', '<leader>tw', '<Cmd>set wrap!<CR>',                                   'Toggle word wrapping')
 map('n', '<leader>t<Tab>', '<Cmd>set list!<CR>',                               'Toggle whitespace rendering')
-map('n', '<leader>t8', function() ToggleColorcolumn() end,                     'Toggle colorcolumn')
-map('n', '<leader>tr', function() ToggleAutoComment() end,                     'Toggle autocomment')
+map('n', '<leader>t8', ToggleColorcolumn,                                      'Toggle colorcolumn')
+map('n', '<leader>tr', ToggleAutoComment,                                      'Toggle autocomment')
 
 -- [[ Fixes ]] ================================================================
 -- Copy/paste with system clipboard
